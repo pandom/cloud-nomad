@@ -24,7 +24,7 @@ job "minecraft"{
             // }
             //eula required otherwise runtime will fail to start
             artifact {
-                source = "https://raw.githubusercontent.com/pandom/cloud-nomad/master/minecraft/eula.txt"
+                source = "https://raw.githubusercontent.com/pandom/cloud-nomad/master/minecraft/common/eula.txt"
                 mode = "file"
                 destination = "eula.txt"
             }
