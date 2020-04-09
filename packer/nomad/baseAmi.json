@@ -27,6 +27,11 @@
       }
     ],
     "provisioners": [
+        {
+            "type": "file",
+            "source": "./binaries/nomad-enterprise_0.11.0+ent_linux_amd64.zip",
+            "destination": "/tmp/nomad-enterprise_0.11.0+ent_linux_amd64.zip"
+        },
       {
         "script": "./baseInit.sh",
         "type": "shell"

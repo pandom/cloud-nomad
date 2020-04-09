@@ -1,11 +1,6 @@
 {
     "aws_access_key": "${AWS_ACCESS_KEY_ID}",
-    "aws_secret_key": "${AWS_SECRET_ACCESS_KEY}",
-    "vpc_region": "${vpc_region}",
-    "vpc_id": "${vpc_id}",
-    "vpc_public_sn_id": "${vpc_public_sn_id}",
-    "vpc_public_sg_id": "${vpc_public_sg_id}",
-    "source_ami": "ubuntu-xenial-16.04",
+    "aws_secret_key": "${AWS_REGION}",
     "instance_type": "t2.medium",
     "ssh_username": "nomad",
     "app_name": "ami-template"
