@@ -6,7 +6,7 @@ job "minecraft"{
              lifecycle {
                hook = "prestart"
                //sidecar - true value will ensure it runs for duration of job allocation; and on restart
-               //false will only run once. Perhaps move to false when using persistent storage
+               //false will only run once. Perhaps move to false when using persistent 
                sidecar = "true"
             }
             //eula required otherwise runtime will fail to start
@@ -15,12 +15,12 @@ job "minecraft"{
                 mode = "file"
                 destination = "eula.txt"
             }
-           
-        }
+            driver = "exec"
+        } 
         task "minecraft" {
             resources {
                 cpu = 800
-                memory = 900
+                memory = 800
                 disk = 2000
                 network {
                     port "access" {
@@ -28,7 +28,6 @@ job "minecraft"{
                     }
                 }
             }
-            
             artifact {
                 source = "https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar"
                 mode = "file"

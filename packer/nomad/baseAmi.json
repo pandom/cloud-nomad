@@ -1,0 +1,35 @@
+{
+    "builders": [
+      {
+        "access_key": "{{user `AWS_ACCESS_KEY_ID`}}",
+        "secret_key": "{{user `AWS_SECRET_ACCESS_KEY`}}",
+        "communicator": "ssh",
+        "ami_description": "An Ubuntu 16.04 AMI that has ready for Nomad to be installed.",
+        "ami_name": "nomad-ubuntu-{{isotime | clean_resource_name}}",
+        "instance_type": "t2.medium",
+        "name": "nomad-ubuntu-{{isotime}}",
+        "region": "{{user `aws_region`}}",
+        "source_ami_filter": {
+          "filters": {
+            "architecture": "x86_64",
+            "block-device-mapping.volume-type": "gp2",
+            "name": "*ubuntu-xenial-16.04-amd64-server-*",
+            "root-device-type": "ebs",
+            "virtualization-type": "hvm"
+          },
+          "most_recent": true,
+          "owners": [
+            "099720109477"
+          ]
+        },
+        "ssh_username": "ubuntu",
+        "type": "amazon-ebs"
+      }
+    ],
+    "provisioners": [
+      {
+        "script": "./baseInit.sh",
+        "type": "shell"
+      }
+    ]
+  }
