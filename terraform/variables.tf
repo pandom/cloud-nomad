@@ -57,3 +57,8 @@ variable "associate_public_ips" {
   default = true
   type = bool
 }
+
+variable "myip" {
+  type = string
+  default = "120.148.1.90"
+}

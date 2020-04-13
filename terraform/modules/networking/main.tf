@@ -60,7 +60,7 @@ module "nomad_server_sg" {
   ingress_rules = [
     {
       port        = 22
-      cidr_blocks = ["10.0.0.0/16"]
+      cidr_blocks = ["10.0.0.0/16", "${var.myip}"]
     },
     {
       port        = 4646
