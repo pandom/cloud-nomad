@@ -1,3 +1,14 @@
+data "terraform_remote_state" "cloud-nomad-myip" {
+  backend = "remote"
+
+  config = {
+    organization = "burkey"
+    workspaces = {
+      name = "cloud-nomad-myip"
+    }
+  }
+}
+
 data "aws_availability_zones" "available" {}
 
 module "vpc" {
