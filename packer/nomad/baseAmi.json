@@ -32,6 +32,16 @@
             "source": "./binaries/nomad-enterprise_0.11.0+ent_linux_amd64.zip",
             "destination": "/tmp/nomad-enterprise_0.11.0+ent_linux_amd64.zip"
         },
+        {
+          "provisioners": [{
+            "type": "shell",
+            "inline": [
+              "git clone --branch <module_VERSION> https://github.com/hashicorp/terraform-aws-nomad.git /tmp/terraform-aws-nomad",
+              "/tmp/terraform-aws-nomad/modules/install-nomad/install-nomad --version {{user `nomad_version`}}"
+            ],
+            "pause_before": "30s"
+          }]
+        },
       {
         "script": "./baseInit.sh",
         "type": "shell"
