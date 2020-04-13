@@ -12,6 +12,10 @@ server {
     bootstrap_expect = ${instance_count}
 }
 
+acl {
+  enabled = true
+}
+
 telemetry {
   publish_allocation_metrics = true
   publish_node_metrics       = true
