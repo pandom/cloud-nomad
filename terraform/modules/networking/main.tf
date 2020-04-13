@@ -33,7 +33,7 @@ module "consul_server_sg" {
   ingress_rules = [
     {
       port        = 22
-      cidr_blocks = ["10.0.0.0/16", "${data.terraform_remote_state.cloud-nomad-myip.outputs.myip}/32"]
+      cidr_blocks = ["10.0.0.0/16", "${data.terraform_remote_state.cloud-nomad-myip.outputs.myip.body}/32"]
     },
     {
       port        = 8300
@@ -71,7 +71,7 @@ module "nomad_server_sg" {
   ingress_rules = [
     {
       port        = 22
-      cidr_blocks = ["10.0.0.0/16", "${data.terraform_remote_state.cloud-nomad-myip.outputs.myip}/32"]
+      cidr_blocks = ["10.0.0.0/16", "${data.terraform_remote_state.cloud-nomad-myip.outputs.myip.body}/32"]
     },
     {
       port        = 4646
@@ -113,7 +113,7 @@ module "nomad_client_sg" {
   ingress_rules = [
     {
       port        = 22
-      cidr_blocks = ["10.0.0.0/16", "${data.terraform_remote_state.cloud-nomad-myip.outputs.myip}/32"]
+      cidr_blocks = ["10.0.0.0/16", "${data.terraform_remote_state.cloud-nomad-myip.outputs.myip.body}/32"]
     },
     {
       port        = 4646
