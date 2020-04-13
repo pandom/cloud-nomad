@@ -1,6 +1,9 @@
-resource "null_resource" "myip" {
-    provisioner "local-exec" {
-        command = "curl -s ifconfig.co >> myip.txt"
-    }
+module "files" {
+  source  = "matti/resource/shell"
+  command = "curl -s ifconfig.co"
+
 }
 
+output "myip" {
+  value = module.files.stdout
+}
