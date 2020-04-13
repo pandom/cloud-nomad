@@ -4,5 +4,5 @@ variable "namespace" {
 
 variable "myip" {
   type = string
-  value = "120.148.1.90"
+  default = "120.148.1.90"
 }
