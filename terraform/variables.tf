@@ -16,7 +16,7 @@ variable "nomad" {
     version              = "0.11.0"
     servers_count        = 3
     server_instance_type = "t3.micro"
-    clients_count        = 5
+    clients_count        = 3
     client_instance_type = "t3.micro"
   }
   type = object({
@@ -39,7 +39,7 @@ variable "namespace" {
 }
 
 variable "ssh_keypair" {
-  default = null
+  default = "burkey"
   type    = string
 }
 
