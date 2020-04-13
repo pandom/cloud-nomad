@@ -3,6 +3,6 @@ variable "namespace" {
 }
 #CIDR value for ingress of a single IP
 variable "myip" {
-  type = string
-  default = "120.148.1.90/32"
+  // default = "120.148.1.90/32"
+  default = data.terraform_remote_state.cloud-nomad-myip.outputs.myip
 }
