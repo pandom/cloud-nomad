@@ -57,7 +57,7 @@ resource "aws_lb_target_group" "nomad_ui" {
   vpc_id   = var.vpc.vpc_id
 
   health_check {
-    path = "/v1/agent/self"
+    path = "/v1/status/leader"
   }
 
   tags = {
