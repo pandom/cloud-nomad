@@ -2,7 +2,7 @@ variable "consul" {
   default = {
     version              = "1.7.2"
     servers_count        = 3
-    server_instance_type = "m1.small"
+    server_instance_type = "t3.small"
   }
   type = object({
     version              = string
@@ -15,9 +15,9 @@ variable "nomad" {
   default = {
     version              = "0.11.0"
     servers_count        = 3
-    server_instance_type = "m1.small"
+    server_instance_type = "t3.small"
     clients_count        = 3
-    client_instance_type = "m1.small"
+    client_instance_type = "t3.small"
   }
   type = object({
     version              = string
