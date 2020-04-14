@@ -5,6 +5,7 @@ function installDependencies() {
   echo "Installing dependencies..."
   sudo apt-get -qq update &>/dev/null
   sudo apt-get -yqq install unzip &>/dev/null
+  sudo apt-get -yqq install default-jre &>/dev/null
 }
 
 function installDocker() {
