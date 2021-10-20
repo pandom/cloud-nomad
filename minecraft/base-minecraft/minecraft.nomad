@@ -1,5 +1,5 @@
 job "minecraft"{
-    datacenters = ["aws"]
+    datacenters = ["dc1"]
     priority = 80
     group "mc-server" {
         task "minecraft" {
